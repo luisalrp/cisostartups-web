@@ -37,7 +37,7 @@ export const PostCard = ({ settings, post, num, isHome }: PostCardProps) => {
         <Link href={url}>
           <a className="post-card-content-link">
             <header className="post-card-header">
-              {post.primary_tag && <div className="post-card-primary-tag">{post.primary_tag.name}</div>}
+              {post.primary_tag && <div style={{ color: "#bda35d" }} className="post-card-primary-tag">{post.primary_tag.name}</div>}
               <h2 className="post-card-title">{post.title}</h2>
               <hr style={{ margin: "5px 0px 5px 0px", border: "1px solid white" }}/>
             </header>
