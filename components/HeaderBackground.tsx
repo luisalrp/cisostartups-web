@@ -9,7 +9,7 @@ export const HeaderBackground = ({ srcImg, children }: HeaderBackgroundProps) =>
   return (
     <>
       {srcImg ? (
-        <div className="outer site-header-background responsive-header-img" style={{ backgroundImage: `url(${srcImg})` }}>
+        <div className="outer site-header-background responsive-header-img" style={{ backgroundImage: url("/hero-banner-cisostartups.png") }}>
           {children}
         </div>
       ) : (
