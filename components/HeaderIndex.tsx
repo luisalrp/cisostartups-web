@@ -72,14 +72,14 @@ export const HeaderIndex = ({ settings }: HeaderIndexProps) => {
       <HeaderBackground srcImg={""}>
         <div className="inner">
           <SiteNav className="site-nav" {...{ siteUrl, settings }} />
-          <div className="site-header-content">
-            <div style={{ marginTop: 200, zIndex: 64 }}>
+          <div style={{ marginBottom: 72 }} className="site-header-content">
+            <div style={{ marginTop: 54, zIndex: 64 }}>
               <br></br>
               <br></br>
               <h1 className="site-description">Build securely with us</h1>
               <h1 className="site-description__text">We’re a boutique cyber security firm of experts.
   Born and bred to help Startups protect their business and their customer's information.</h1>
-              <button className='boton-twitter' style={{ width: "50%", opacity:30, marginLeft: "25%", marginRight: "25%", zIndex: 100, textDecoration: "none", marginTop: 54, marginBottom: 20, backgroundColor: "rgba(196, 148, 12, 1)", borderRadius: 50, padding: "9px 20px 9px 20px" }}><a style={{ color: "white" }} href="https://twitter.com/messages/3192504664-1164983863736713216?recipient_id=1164983863736713216&text=Hi,%20I%20would%20like%20to%20know%20more" rel="noreferrer" target="_blank">DM us on Twitter</a></button>
+              <button className='boton-twitter' style={{ width: "50%", opacity:30, marginLeft: "25%", marginRight: "25%", zIndex: 100, textDecoration: "none", marginTop: 11, marginBottom: 20, backgroundColor: "rgba(196, 148, 12, 1)", borderRadius: 50, padding: "9px 20px 9px 20px" }}><a style={{ color: "white" }} href="https://twitter.com/messages/3192504664-1164983863736713216?recipient_id=1164983863736713216&text=Hi,%20I%20would%20like%20to%20know%20more" rel="noreferrer" target="_blank">DM us on Twitter</a></button>
               <br></br>
               <br />
               <ConnectWallet />
