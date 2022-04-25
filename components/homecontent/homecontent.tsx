@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { ConnectWallet } from '../ConnectWallet';
 
 export const Claim = () => {
     return(
@@ -9,6 +10,7 @@ export const Claim = () => {
                     <h2 style={{color: "white", textAlign: "center", fontWeight: 300 }} className="main-content_description_section_3">CISOStartups was founded by Luis Alberto Rodrigo,former PwC Business Security <br />Solutions Manager and current angel investor, to help entrepreneurs with their company security.</h2>
                 </div>
                 <br />
+                {/* <ConnectWallet /> */}
                 <div style={{ marginTop: 64 }} className="wrapper">
                     <h1 style={{ textAlign: "center" }} className="main-content_claim_section_2">Features</h1>   
                     <br />     
