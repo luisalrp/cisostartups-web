@@ -1,6 +1,6 @@
 import { GhostSettings } from '@lib/ghost'
 import { getLang, get } from '@utils/use-lang'
-import { SubscribeForm } from '@components/SubscribeForm'
+import SubscribeForm from '@components/suscribe/SubscribeForm'
 
 export const Subscribe = ({ settings }: { settings: GhostSettings }) => {
   const text = get(getLang(settings.lang))
@@ -12,7 +12,7 @@ export const Subscribe = ({ settings }: { settings: GhostSettings }) => {
         {text(`SUBSCRIBE_TO`)} {title}
       </h3>
       <p className="subscribe-form-description">{text(`SUBSCRIBE_SECTION`)}</p>
-      <SubscribeForm {...{ settings }} />
+      <SubscribeForm />
     </section>
   )
 }

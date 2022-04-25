@@ -6,7 +6,9 @@ import { GhostSettings } from '@lib/ghost'
 import { getLang, get } from '@utils/use-lang'
 import { siteIcon } from '@meta/siteDefaults'
 
-import { SubscribeForm } from '@components/SubscribeForm'
+// import { SubscribeForm } from '@components/suscribe/SubscribeForm'
+
+import { revueAPIkey } from '@lib/processEnv'
 
 export const SubscribeOverlay = ({ settings }: { settings: GhostSettings }) => {
   const text = get(getLang(settings.lang))
@@ -28,7 +30,7 @@ export const SubscribeOverlay = ({ settings }: { settings: GhostSettings }) => {
             {text(`SUBSCRIBE_TO`)} {title}
           </h1>
           <p className="subscribe-overlay-description">{text(`SUBSCRIBE_OVERLAY`)}</p>
-          <SubscribeForm {...{ settings }} />
+          {/* <SubscribeForm /> */}
         </div>
       </div>
     </div>
