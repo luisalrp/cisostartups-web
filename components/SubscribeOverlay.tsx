@@ -8,8 +8,6 @@ import { siteIcon } from '@meta/siteDefaults'
 
 // import { SubscribeForm } from '@components/suscribe/SubscribeForm'
 
-import { revueAPIkey } from '@lib/processEnv'
-
 export const SubscribeOverlay = ({ settings }: { settings: GhostSettings }) => {
   const text = get(getLang(settings.lang))
   const { isOpen, handleClose } = useOverlay()
