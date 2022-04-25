@@ -46,10 +46,8 @@ import {
       // If a wallet is connected, show address, chainId and disconnect button
       if (address) {
         const chainid = network[0].data.chain.id
-        if (network[0].data.chain.id === 42220) {
-          return(
+        if (network[0].data.chain.id === 42220) {          
             router.push("http://ciiserver.metodociimas.com:3003/members/?token=enA8TurwN2E1FxjLLh6SXY_nuvQ_BFY5&action=signin")
-          )
         }
         return (
           <div style={{ color: "white", zIndex: "10" }} >
