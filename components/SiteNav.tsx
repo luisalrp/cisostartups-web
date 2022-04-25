@@ -10,6 +10,8 @@ import { SubscribeButton } from '@components/SubscribeButton'
 import { getLang, get } from '@utils/use-lang'
 import { GhostSettings, NavItem, NextImage } from '@lib/ghost'
 
+// import { ConnectWallet } from "./ConnectWallet";
+
 export interface SiteNavProps {
   settings: GhostSettings
   className: string
@@ -72,7 +74,7 @@ export const SiteNav = ({ settings, className, postTitle }: SiteNavProps) => {
                     width: `${calcSiteLogoWidth(siteLogo, targetHeight)}px`,
                   }}
                 >
-                  <img width="110px" height="auto" src={"/logocisostartupswhite.png"} />
+                  <img src={"/logocisostartupswhite.png"} alt={title} />
                 </div>
               </a>
             ) : site.logo ? (
@@ -98,7 +100,8 @@ export const SiteNav = ({ settings, className, postTitle }: SiteNavProps) => {
           </div>
         )}
         <DarkMode {...{ settings }} />
-        {memberSubscriptions && <SubscribeButton {...{ lang: settings.lang }} />}
+        {/* {memberSubscriptions && <SubscribeButton {...{ lang: settings.lang }} />} */}
+        {/* <ConnectWallet /> */}
       </div>
     </nav>
   )
