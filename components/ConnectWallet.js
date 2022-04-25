@@ -47,7 +47,7 @@ import {
       if (address) {
         const chainid = network[0].data.chain.id
         if (network[0].data.chain.id === 42220) {          
-            router.push("http://ciiserver.metodociimas.com:3003/members/?token=enA8TurwN2E1FxjLLh6SXY_nuvQ_BFY5&action=signin")
+            router.push("http://82.223.128.82:3003/members/?token=4qWeuJynRxAPEllEIIg0Tm6im02SyQQR&action=signin")
         }
         return (
           <div style={{ color: "white", zIndex: "10" }} >
