@@ -65,26 +65,18 @@ export const Layout = ({ settings, header, children, isHome, sticky, previewPost
         <footer className="site-footer outer">
           <div className="site-footer-content inner">
             <section className="copyright">
-              <a href={resolve(siteUrl, '')}>{title}</a> &copy; {new Date().getFullYear()}
+              <a href={resolve("https://cisostartups.com", '')}>{title}</a> &copy; {new Date().getFullYear()}
             </section>
 
             <nav className="site-footer-nav">
               <Link href="/">
                 <a>{text(`LATEST_POSTS`)}</a>
               </Link>
-              {site.facebook && (
-                <a href={facebookUrl} target="_blank" rel="noopener noreferrer">
-                  Facebook
-                </a>
-              )}
               {site.twitter && (
                 <a href={twitterUrl} target="_blank" rel="noopener noreferrer">
                   Twitter
                 </a>
               )}
-              <a href="https://www.jamify.org" target="_blank" rel="noopener noreferrer">
-                Jamify
-              </a>
             </nav>
           </div>
         </footer>
