@@ -8,8 +8,10 @@ import {
   } from '@thirdweb-dev/react';
   import { useOverlay } from '@components/contexts/overlayProvider'
   import { useRouter } from 'next/router';
-
+  import { useState } from 'react';
   
+  import { ghostAPIUrl } from '@lib/processEnv'
+
   export const ConnectWallet = (chainid) => {
     const router = useRouter()
     const connectWithCoinbaseWallet = useCoinbaseWallet();
@@ -42,12 +44,34 @@ import {
         this.setState({provider, kit})
       }
 
+      const subscribe = async () => {
+        try {
+          const result = await fetch(
+            `https://${ ghostAPIUrl }/members/api/send-magic-link/`,
+            {
+              method: "POST", // or 'PUT'
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify({ email: 'coinmember@cisostartups.com', emailType: "subscribe" })
+            }
+          );
+    
+          const r = await result();
+    
+          console.log(r)
+          }
+        catch {
+          console.error()
+        }
+      };
       
       // If a wallet is connected, show address, chainId and disconnect button
       if (address) {
         const chainid = network[0].data.chain.id
         if (network[0].data.chain.id === 42220) {          
-            router.push("http://82.223.128.82:3003/members/?token=4qWeuJynRxAPEllEIIg0Tm6im02SyQQR&action=signin")
+            // router.push("http://82.223.128.82:3003/members/?token=4qWeuJynRxAPEllEIIg0Tm6im02SyQQR&action=signin")
+            subscribe()
         }
         return (
           <div style={{ color: "white", zIndex: "10" }} >
