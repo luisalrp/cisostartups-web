@@ -40,7 +40,6 @@ export const HeaderIndex = ({ settings }: HeaderIndexProps) => {
     return (targetHeight * width) / height
   }
 
-
   // // Create a token without the client
   // const jwt = require('jsonwebtoken');
   // const axios = require('axios');
@@ -83,8 +82,6 @@ export const HeaderIndex = ({ settings }: HeaderIndexProps) => {
               <br></br>
               <br />
               <ConnectWallet />
-              { ConnectUser() }
-              {/* <button style={{ zIndex: 100 }} onClick={() => {!memberSubscriptions} }>Hacerte miembro</button> */}
             </div>
             <video className='video-1' loop style={{ zIndex: 54, position: "absolute" }} autoPlay width={ "100%" } height={"auto"} src="/intro.mp4"></video>
           </div>
