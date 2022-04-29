@@ -18,6 +18,8 @@ const defaultOptions = withBundleAnalyzer({
       'repository-images.githubusercontent.com',
       'www.gravatar.com',
       'github.githubassets.com',
+      'cisostartups.com',
+      'ghost.cisostartups.com',
       ...(process.env.IMAGE_DOMAINS || '').split(','),
     ],
   },
@@ -45,4 +47,14 @@ module.exports = (phase, { _defaultConfig }) => {
   const isExport = process.env.IS_EXPORT || phase === PHASE_EXPORT
   return isExport ? customImageLoaderOptions : defaultOptions
   typescript: ignoreBuildErrors: true
+  webpack: (config, { isServer }) => {
+    // Fixes npm packages that depend on `fs` module
+    if (!isServer) {
+      config.node = {
+        fs: 'empty'
+      }
+    }
+
+    return config
+  }
 }
