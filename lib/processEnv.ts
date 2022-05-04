@@ -1,8 +1,12 @@
 import * as appConfig from '@appConfig'
 import { NavItem } from '@lib/ghost'
 
-export const ghostAPIUrl = process.env.CMS_GHOST_API_URL || 'http://localhost:2368'
-export const ghostAPIKey = process.env.CMS_GHOST_API_KEY || 'f97e02c6c9cabebd79a56a0643'
+export const ghostAPIUrl = process.env.CMS_GHOST_API_URL || 'http://ciiserver.metodociimas.com:3003'
+export const ghostAPIKey = process.env.CMS_GHOST_API_KEY || '77a6114339d0e43e9df8ae920d'
+export const revueAPIkey = process.env.REVUE_API_KEY || 'rAKsgo4_yQeUU3L0i9rOiZA4KpfRblbH'
+export const brandingColor = process.env.BRANDING_COLOR_HEX || '#c4940c'
+export const backgroundVideo = process.env.BACKGROUND_VIDEO || ''
+export const tokenAddress = process.env.TOKEN_ADDRESS || '0x38c612c203dcfffb10d12ac7a550fff43b15412c'
 
 const siteUrl = process.env.SITE_URL || (process.env.VERCEL_URL && `https://${process.env.VERCEL_URL}`) || process.env.URL || 'http://localhost:3000'
 
