@@ -63,7 +63,7 @@ export const SEO = (props: SEOProps) => {
       {twitter && <meta property="twitter:creator" content={twitter} />}
       {twitter && <meta property="twitter:site" content={`https://twitter.com/${twitter.replace(/^@/, ``)}/`} />}
       {seoImage && <meta name="twitter:image" content={seoImage.url} />}
-      {seoImage && <meta property="og:image" content={seoImage.url} />}
+      {seoImage && <meta property="og:image" content={"/seoImage.png"} />}
       {seoImage && <meta property="og:image:width" content={`${seoImage.dimensions.width}`} />}
       {seoImage && <meta property="og:image:height" content={`${seoImage.dimensions.height}`} />}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}></script>
