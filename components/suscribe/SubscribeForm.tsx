@@ -1,25 +1,76 @@
 import { memberSubscriptions } from "@appConfig";
 import { ConnectUser } from '../ConnectUser';
+import { useState } from 'react';
+import WalletButton from "@components/WalletButtonVerticalBig";
 
-export default () => {
-  // http://ciiserver.metodociimas.com:3003/ghost/api/canary/admin/members/625ffb8dc956250001663eb0/signin_urls/
+export const SubscribeForm = () => {
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
 
-  // The admin API client is the easiest way to use the API
-  // const GhostAdminAPI = require('@tryghost/admin-api');
-  // // Configure the client
-  // const api = new GhostAdminAPI({
-  //     url: 'http://ciiserver.metodociimas.com:3003/',
-  //     // Admin API key goes here
-  //     key: '623ca36ec956250001663e8e:2b908355d73ba49dd775d7b5465fe6a8df5c59ee253daab36dc58d7e64e62fd7',
-  //     version: 'v3'
-  // })
-  // // Make an authenticated request
-  // api.posts.add({title: 'Hello world'})
-  //     .then((response: any) => console.log(response))
-  //     .catch((error: any) => console.error(error))
+  const subscribeMe = async (event: { preventDefault: () => void; }) => {
+    event.preventDefault();
+  
+    const res = await fetch("/api/subscribe", {
+       body: JSON.stringify({ email: email }),
+       headers: { 'Content-Type': 'application/json' },
+       method: "POST",
+    });
+  
+   const { error, message } = await res.json();
+    if (error) {
+       setError(error);
+    } else {
+       setSuccess(message);
+    }
+  };
+  
+  const changeEmail = (event: { target: { value: any; }; }) => {
+   const email = event.target.value;
+   setEmail(email);
+  }
+
   return (
     <>
-      <button style={{ zIndex: 100 }} onClick={() => {  } }>Hacerte miembro</button>
+      {/* <div className="border border-gray-200 rounded p-6 my-4 w-full bg-gray-50">
+        <p className="text-gray-900 mb-6 text-lg md:text-xl">
+           Want to keep your brain engaged with great UI/UX learning content?
+        </p>
+        <p className="text-gray-800 dark:text-gray-400 mb-10 text-base">
+          Enter your email address and you'll be be added to my email newsletter, of which you can opt out any time.
+        </p>
+        <form className="relative my-4" onSubmit={subscribeMe}>
+          <input
+            onChange={changeEmail}
+            aria-label="Email for newsletter"
+            placeholder="example@email.com"
+            type="email"
+            autoComplete="email"
+            required
+            className="py-4 px-0 text-md bg-transparent w-9/12 text-gray-900 border-b-2 border-gray-600 dark:border-gray-400 dark:text-white focus:border-brand focus-visible:outline-none"
+          />
+          <button
+            className="flex justify-center px-5 py-4 mt-8 bg-green-600 text-white font-bold text-lg"
+            type="submit"
+          >
+            Subscribe
+          </button>
+        </form>
+
+        {success 
+       ? 
+            <span className="flex items-center text-sm font-bold text-green-700"> 
+                {success}
+            </span> 
+              : 
+            <span className="flex items-center text-sm font-bold text-red-800">
+                  {error} 
+            </span>
+        } 
+      </div>*/}
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <WalletButton />
+      </div>
     </>
   );
-};
+}
