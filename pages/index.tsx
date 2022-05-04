@@ -1,4 +1,4 @@
-import { GetStaticProps } from 'next'
+import next, { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 
 import { Layout } from '@components/Layout'
@@ -40,7 +40,7 @@ interface IndexProps {
 export default function Index({ cmsData }: IndexProps) {
   const router = useRouter()
   if (router.isFallback) return <div>Loading...</div>
-
+  
   const { settings, posts, seoImage, bodyClass } = cmsData
 
   return (
