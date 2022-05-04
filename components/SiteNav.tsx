@@ -12,6 +12,10 @@ import { GhostSettings, NavItem, NextImage } from '@lib/ghost'
 
 // import { ConnectWallet } from "./ConnectWallet";
 
+import WalletButton from './WalletButtonVerticalBig'
+
+import WalletButtonLink from './WalletButtonLink'
+
 export interface SiteNavProps {
   settings: GhostSettings
   className: string
@@ -100,7 +104,11 @@ export const SiteNav = ({ settings, className, postTitle }: SiteNavProps) => {
           </div>
         )}
         <DarkMode {...{ settings }} />
-        {/* {memberSubscriptions && <SubscribeButton {...{ lang: settings.lang }} />} */}
+        {memberSubscriptions && <SubscribeButton {...{ lang: settings.lang }} />}
+        <div style={{  }}>
+          {/* <WalletButton /> */}
+          <WalletButtonLink />
+        </div>
         {/* <ConnectWallet /> */}
       </div>
     </nav>

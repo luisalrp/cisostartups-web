@@ -15,6 +15,8 @@ import { ConnectUser } from './ConnectUser'
 
 import Video from 'next'
 
+import WalletButton from './WalletButtonVerticalBig'
+
 interface HeaderIndexProps {
   settings: GhostSettings
 }
@@ -81,7 +83,13 @@ export const HeaderIndex = ({ settings }: HeaderIndexProps) => {
               <button className='boton-twitter' style={{ width: "50%", opacity:30, marginLeft: "25%", marginRight: "25%", zIndex: 100, textDecoration: "none", marginTop: 11, marginBottom: 20, backgroundColor: "rgba(196, 148, 12, 1)", borderRadius: 50, padding: "9px 20px 9px 20px" }}><a style={{ color: "white" }} href="https://twitter.com/messages/3192504664-1164983863736713216?recipient_id=1164983863736713216&text=Hi,%20I%20would%20like%20to%20know%20more" rel="noreferrer" target="_blank">DM us on Twitter</a></button>
               <br></br>
               <br />
-              <ConnectWallet />
+              <h4 style={{ textAlign: "center", justifyContent: "center", fontFamily: "Montserrat Light", paddingTop: "11px" }}>Buy my <a href='https://beta.talentprotocol.com/u/luisalrp?tab=overview' target={"blank"}><span style={{ color: "#fcba03", fontFamily: "Montserrat Medium" }}>personal token</span></a> to support our research activities and access to exclusive perks! <br /><br /><a href='https://beta.talentprotocol.com/sign_up?code=SUP-e17b4e7309f3eff0' target={"blank"}><span style={{ color: "#fcba03", fontFamily: "Montserrat Medium" }}>Sign up</span></a> for the talent protocol private beta</h4>
+              <br />
+              <br />
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <WalletButton />
+              </div>
+              {/* <ConnectWallet /> */}
             </div>
             <video className='video-1' loop style={{ zIndex: 54, position: "absolute" }} autoPlay width={ "100%" } height={"auto"} src="/intro.mp4"></video>
           </div>
