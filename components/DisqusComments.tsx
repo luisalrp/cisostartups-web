@@ -1,4 +1,3 @@
-import { DiscussionEmbed } from 'disqus-react'
 import { GhostPostOrPage } from '@lib/ghost'
 import { resolvePostFullPath } from '@utils/routing'
 
@@ -15,7 +14,6 @@ export const DisqusComments = ({ post, shortname, siteUrl }: DisqusCommentsProps
 
   return (
     <section>
-      <DiscussionEmbed {...{ shortname, config }} />
     </section>
   )
 }
